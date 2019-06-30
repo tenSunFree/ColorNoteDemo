@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+            android:background="#FFF8BB"
+            android:id="@+id/rootFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <!-- 表格背景 -->
+        <com.home.colornotedemo.main.view.component.MainAddNoteTableView
+                android:layout_marginTop="90dp"
+                android:id="@+id/tableView"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        <!-- 編輯欄 -->
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <!-- 頂層欄 -->
+                <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                    <ImageView
+                            android:scaleType="fitXY"
+                            android:src="@drawable/icon_fragment_main_add_note_top_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                </FrameLayout>
+
+                <!-- 狀態 & 最後修改時間 -->
+                <LinearLayout
+                        android:layout_marginTop="4dp"
+                        android:background="#FFF8BB"
+                        android:gravity="top"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp">
+
+                    <TextView
+                            android:text="編輯中"
+                            android:id="@+id/stateTextView"
+                            android:textColor="#5A5A4E"
+                            android:textSize="16dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    <View
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"/>
+
+                    <TextView
+                            android:text="2017/06/33"
+                            android:id="@+id/timeTextView"
+                            android:textColor="#5A5A4E"
+                            android:textSize="16dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <FrameLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:context=".main.view.MainActivity">
+
+                    <com.home.colornotedemo.main.view.component.MainAddNoteTableView
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    <EditText
+                            android:focusable="false"
+                            android:textColor="#000000"
+                            android:id="@+id/editText"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:textSize="20dp"
+                            android:background="#00000000"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                </FrameLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- 提供非編輯模式的點擊監聽 -->
+        <View
+                android:visibility="invisible"
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+    </FrameLayout>
+</layout>
